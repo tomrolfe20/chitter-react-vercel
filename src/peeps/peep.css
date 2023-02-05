@@ -1,0 +1,20 @@
+.peep-container {
+  width: 500px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+/* .peep-container :nth-child(1) {
+  font-size: 30px;
+} */
+.peep-container :nth-child(2) {
+  font-size: 20px;
+}
+.peep-container :nth-child(3) {
+  font-size: 10px;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Peep from '../peeps/peep';
+import './individualPeep.css';
 
 const IndividualPeep = () => {
   const [indPeep, setIndPeep] = useState([]);
@@ -29,10 +30,10 @@ const IndividualPeep = () => {
   }, []);
 
   return (
-    <>
+    <div className='individual-peep-container'>
       <Peep peep={indPeep} loading={loading} />
       <Link to={`/`}>Back</Link>
-    </>
+    </div>
   );
 };
 

@@ -50,7 +50,7 @@ const Login = () => {
         </span>
       ) : (
         <form onSubmit={handleSubmit}>
-          LOGIN FORM
+         
           <label htmlFor='handle'>Handle:</label>
           <input
             type='text'

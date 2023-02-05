@@ -22,6 +22,7 @@ describe('PeepsFetch', () => {
 
     const loading = screen.getByText('Peeps loading...');
 
+
     expect(loading).toBeInTheDocument();
   });
 });

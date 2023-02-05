@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../lib/contextLib';
+import './newPost.css';
 
 const NewPost = ({ user_id, session_key }) => {
   const { setReload } = useAppContext();
@@ -41,20 +42,21 @@ const NewPost = ({ user_id, session_key }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      New post
-      <div>
+    <div className='new-post-container'>
+      <form onSubmit={handleSubmit}>
         <input
+          placeholder='Whats on your mind?'
           type='text'
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
         />
-      </div>
-      <button type='submit' disabled={submitting}>
-        Submit
-      </button>
-    </form>
+
+        <button type='submit' disabled={submitting}>
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

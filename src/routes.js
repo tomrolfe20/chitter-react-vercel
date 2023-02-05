@@ -11,8 +11,8 @@ const RoutesApp = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/peeps/:id' element={<IndividualPeep />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
+          {/* <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

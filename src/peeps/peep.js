@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import './peep.css';
+import Like from '../components/like';
 import { useAppContext } from '../lib/contextLib';
+import { Link } from 'react-router-dom';
 const Peep = ({ peep, loading }) => {
   const { user, setReload } = useAppContext();
   const [submitting, setSubmitting] = useState(false);
@@ -31,14 +34,21 @@ const Peep = ({ peep, loading }) => {
       setReload(true);
     }
   };
+
   return (
-    <div data-testid='peep-test'>
+    <div data-testid='peep-test' className='peep-container'>
       {loading && <span>Loading</span>}
       {peep && peep.user ? (
         <>
+          <div>@{peep.user.handle}</div>
+
           <div>{peep.body}</div>
-          <div>{peep.user.handle}</div>
-          <div>{peep.id}</div>
+          <div>{user ? <Like post_id={peep.id} /> : null}</div>
+
+          <div>Likes: {peep.likes.length}</div>
+         
+
+          <Link to={`/peeps/${peep.id}`}>View peep</Link>
           {user ? (
             user.user_id === peep.user.id ? (
               <button

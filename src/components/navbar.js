@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './navbar';
 import Login from './logIn';
 import Register from './register';
 import { useAppContext } from '../lib/contextLib';
@@ -12,7 +13,7 @@ const Navbar = () => {
   const [loginHidden, setLoginHidden] = useState(true);
   const [registerHidden, setRegisterHidden] = useState(true);
   return (
-    <div>
+    <div className='navbar-container'>
       {user ? (
         <button
           onClick={() => {
@@ -27,10 +28,23 @@ const Navbar = () => {
           {!loginHidden ? <Login /> : null}
 
           {registerHidden ? (
-            <button onClick={() => setLoginHidden(false)}>Login</button>
+            <>
+              {loginHidden ? (
+                <button onClick={() => setLoginHidden(false)}>Login</button>
+              ) : (
+                <button onClick={() => setLoginHidden(true)}>Back</button>
+              )}
+            </>
           ) : null}
+
           {loginHidden ? (
-            <button onClick={() => setRegisterHidden(false)}>Register</button>
+            <>
+              {registerHidden ? (
+                <button onClick={() => setRegisterHidden(false)}>Register</button>
+              ) : (
+                <button onClick={() => setRegisterHidden(true)}>Back</button>
+              )}
+            </>
           ) : null}
         </>
       )}

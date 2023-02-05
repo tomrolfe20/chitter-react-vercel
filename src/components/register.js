@@ -38,11 +38,12 @@ const Register = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      REGISTER FORM
+      REGISTER NEW USER
       <div>
         <input
           type='text'
           value={handle}
+          placeholder='username'
           onChange={(e) => setHandle(e.target.value)}
           required
         />
@@ -50,6 +51,7 @@ const Register = () => {
       <div>
         <input
           type='password'
+          placeholder='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
