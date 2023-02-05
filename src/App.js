@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import RoutesApp from './routes';
+import { AppContext } from './lib/contextLib';
+import { useState } from 'react';
 
 function App() {
+  const [isAuthenticated, userHasAuthenticated] = useState(false);
+  const [user, setUser] = useState();
+  const [reload, setReload] = useState(false);
+  console.log('user authenticated: ', isAuthenticated);
+  console.log('user details: ', user);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider
+      value={{
+        isAuthenticated,
+        userHasAuthenticated,
+        user,
+        setUser,
+        reload,
+        setReload,
+      }}
+    >
+      <RoutesApp />
+    </AppContext.Provider>
   );
 }
 
