@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Twitter Clone app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Check it out here: https://chitter-react-makers.vercel.app
 
 ## Available Scripts
 
